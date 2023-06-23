@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'landingPage',
     'bootstrap5',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
