@@ -1,1 +1,1 @@
-web: gunicorn 'name-of-application.wsgi' --log-file -
+web: gunicorn 'S2B.wsgi' --log-file -
