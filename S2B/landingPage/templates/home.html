@@ -1,0 +1,387 @@
+{% load static %}
+{% load bootstrap5 %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>EA - Excel Academy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+        <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+        <meta content="Themesbrand" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico" />
+
+        <!-- css -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css">
+    </head>
+
+    <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="20">
+
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                  </div>
+            </div>
+        </div>
+
+        <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-custom " id="navbar">
+
+            <div class="container">
+                <!-- LOGO -->
+                <a class="navbar-brand logo" href="index-1.html">
+                    <img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-dark" height="28" />
+                    <img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-light" height="28" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="" data-feather="menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto navbar-center" id="navbar-navlist">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#team" class="nav-link">Professores</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contate-nos</a>
+                        </li> -->
+                    </ul>
+                    <a href="#contact" class="btn btn-sm rounded-pill nav-btn ms-lg-3">Conhecer Agora</a>
+                </div>
+            </div>
+            <!-- end container -->
+        </nav>
+        <!-- Navbar End -->
+ 
+        <!-- Hero Start -->
+        <section class="hero-1 bg-center bg-primary position-relative" style="background-image: url("/static/images/hero-1-bg.png");" id="home">
+            <div class="container">
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-success" {% endif %}>{{ message }}
+                        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+                    </li>
+                    
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% csrf_token %}
+                <!-- {{form}} -->
+                <div class="row align-items-center hero-content">
+                    <div class="col-lg-5">
+                        <h1 class="text-white display-4 font-weight-semibold mb-4 hero-1-title">Você quer elevar seu potencial usando o Excel?</h1>
+                        <p class="text-white-70 mb-4  mb-lg-5">Nós lançamos a Excel Academy e você pode estar na nossa primeira turma. A PRIMEIRA TURMA É GRATUITA! Corre e solicite uma vaga.</p>
+                        <a href="javascript: void(0);" class="btn btn-lg btn-light rounded-pill me-2">Quero participar</a>
+                        <div class="d-inline-block" data-bs-toggle="modal" data-bs-target="#watchvideomodal">
+                            <a href="javascript: void(0);" class="video-play-icon text-white">
+                                <span class="play-icon-circle align-middle me-2"><i class="icon-sm icon" data-feather="play"></i></span>
+                                <span>Assista o vídeo!</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-6 col-sm-10 mx-auto ms-lg-auto me-lg-0">
+                        <div class="mt-lg-0 mt-4">
+                            <img src="{% static 'images/hero-1-img.png' %}" alt="" class="img-md-responsive" />
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
+                <!-- Modal -->
+                <div class="modal fade bd-example-modal-lg" id="watchvideomodal" data-keyboard="false" tabindex="-1"
+                aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+                        <div class="modal-content hero-modal-0 bg-transparent">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <video id="VisaChipCardVideo" class="w-100" controls="">
+                                <source src="{% static 'images/2023' %}" type="video/mp4">
+                                <!--Browser does not support <video> tag -->
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            <!-- end modal -->
+            </div>
+            <!-- end container -->
+            <div class="hero-bottom-shape">
+                <img src="{% static 'images/hero-1-bottom-shape.png' %}" alt="" class="img-fluid d-block mx-auto" />
+            </div>
+            <!-- end hero shape -->
+        </section>
+        <!-- Hero End -->
+
+        <!-- Services start -->
+        <!-- Services end -->
+
+        <!-- Features start -->
+        <!-- Features end -->
+
+        <!-- Cta end -->
+
+        <!-- Pricing start -->
+        <!-- Pricing end -->
+
+        <!-- Team start -->
+        <section class="section bg-light" id="team">
+            <div class="container">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-7 text-center">
+                        <h2 class="fw-bold">Nossos Tutores</h2>
+                        <p class="text-muted">Nossos tutores são profissionais da área de tecnologia e negócios. Formados nas áreas de Tecnologia da informação e Administração de Empresas, com mais de 10 anos de atuação na área de negócios.</p>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+                            <div class="position-relative overflow-hidden">
+                                <img src="{% static 'images/team/4.jpg' %}" alt="" class="img-fluid d-block mx-auto" />
+                                <ul class="list-inline p-3 mb-0 team-social-item">
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
+                                    </li>
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-info"><i class="icon-sm" data-feather="twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-danger"><i class="icon-sm" data-feather="instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-size-19 mb-1">Aucélio Pereira</h5>
+                                <p class="text-muted text-uppercase font-size-14 mb-0">Developer | T.I</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+                            <div class="position-relative overflow-hidden">
+                                <img src="{% static 'images/team/will.jpg' %}" alt="" class="img-fluid d-block mx-auto" />
+                                <ul class="list-inline p-3 mb-0 team-social-item">
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-primary"><i class="icon-sm" data-feather="facebook"></i></a>
+                                    </li>
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-info"><i class="icon-sm" data-feather="twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item mx-3">
+                                        <a href="javascript: void(0);" class="team-social-icon h-danger"><i class="icon-sm" data-feather="instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-size-19 mb-1">Willian Carvalho</h5>
+                                <p class="text-muted text-uppercase font-size-14 mb-0">Developer | Administrador</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- Team end -->
+
+        <!-- Blog start -->
+        <!-- Blog end -->
+
+        <!-- CTA start -->
+        <!-- CTA end -->
+
+        <!-- Contact us start -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Envie-nos o seu contato</h2>
+                        <p class="text-muted mb-5">Caso tenha interesse, insira seu nome e telefone (Whatsapp) para que entremos em contato.</p>
+                       
+                        <div>
+                            <form method="post" name="myForm" onsubmit="return validateForm()">
+                                <p id="error-msg"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="name" class="text-muted form-label">Nome</label>
+                                            <!-- <input name="name" id="name" type="text" class="form-control" placeholder="Seu Nome*" > -->
+                                            {% csrf_token %}
+                                            {{ form.nome|add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="email" class="text-muted form-label">Email</label>
+                                            <!-- <input name="email" id="email" type="email" class="form-control" placeholder="Seu email*"> -->
+                                            {{ form.email|add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="subject" class="text-muted form-label">Telefone</label>
+                                            <!-- <input type="text" class="form-control" id="subject" name="subject" placeholder="O Assunto.." /> -->
+                                            {% csrf_token %}
+                                            {{ form.telefone|add_class:"form-control" }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                           
+                                        <div class="mb-4 pb-2">
+                                            <label for="comments" class="text-muted form-label">Nível de Excel</label>
+                                            {% csrf_token %}
+                                            {{ form.nivel|add_class:"form-control" }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">    
+                                        <button type="submit" id="submit" name="send" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- end col -->
+
+                    <div class="col-lg-5 ms-lg-auto">
+                        <div class="mt-5 mt-lg-0">
+                            <img src="{% static 'images/contact.png' %}" alt="" class="img-fluid d-block" />
+                            <p class="text-muted mt-5 mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="mail"></i> Support@s2b.com</p>
+                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="phone"></i> +55 (99) 99127-4222</p>
+                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="map-pin"></i> 45, Bairro Centro, Dorgival Pinheiro</p>
+                            <ul class="list-inline pt-4">
+                                <li class="list-inline-item me-3">
+                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item me-3">
+                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="twitter"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- Contact us end -->
+
+        <!-- Footer Start -->
+        <footer class="footer" style="background-image: url("static/images/footer-bg.png");">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="mb-4">
+                            <a href="index-1.html"><img src="{% static 'images/logo-light.png' %}" alt="" class="" height="30" /></a>
+                            <p class="text-white-50 my-4">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.</p>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <div class="col-lg-7 ms-lg-auto">
+                        <div class="row">
+                            <div class="col-lg-3 col-6">
+                                <div class="mt-4 mt-lg-0">
+                                    <h4 class="text-white font-size-18 mb-3">Clientes</h4>
+                                    <ul class="list-unstyled footer-sub-menu">
+                                        <li><a href="javascript: void(0);" class="footer-link">Works</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Strategy</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Releases</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Press</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Mission</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="mt-4 mt-lg-0">
+                                    <h4 class="text-white font-size-18 mb-3">Produtos</h4>
+                                    <ul class="list-unstyled footer-sub-menu">
+                                        <li><a href="javascript: void(0);" class="footer-link">Trending</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Popular</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Customers</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Features</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="mt-4 mt-lg-0">
+                                    <h4 class="text-white font-size-18 mb-3">Informações</h4>
+                                    <ul class="list-unstyled footer-sub-menu">
+                                        <li><a href="javascript: void(0);" class="footer-link">Developers</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Support</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Customer Service</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Get Started</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Guide</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="mt-4 mt-lg-0">
+                                    <h4 class="text-white font-size-18 mb-3">Suporte</h4>
+                                    <ul class="list-unstyled footer-sub-menu">
+                                        <li><a href="javascript: void(0);" class="footer-link">FAQ</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Contact</a></li>
+                                        <li><a href="javascript: void(0);" class="footer-link">Disscusion</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-5">
+                            <p class="text-white-50 f-15 mb-0">
+                                <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Qexal. Design By Themesbrand</p>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+            
+        </footer>
+        <!-- Footer End -->
+
+        <!-- javascript -->
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static  'js/smooth-scroll.polyfills.min.js' %}"></script>
+        <!-- feather-icons js -->
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- App Js -->
+        <script src="{% static 'js/app.js' %}"></script>
+
+    </body>
+</html>
