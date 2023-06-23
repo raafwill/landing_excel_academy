@@ -1,1 +1,1 @@
-web: gunicorn 'S2B.wsgi' --log-file -
+web: python manage.py migrate && gunicorn S2B.wsgi.wsgi
